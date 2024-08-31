@@ -1,13 +1,15 @@
 // ==UserScript==
 // @name         SIT上应大教务 -  生成json文件
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0.1
 // @description  通过对课表页面进行解析，生成一个json文件，随后即可将此json文件导入到小应生活中以查看课程表
 // @author       洛狼狼
 // @license      MIT
 // @match      *://jwxt.sit.edu.cn/*
 // @match      *://jwxt.sit.edu.cn/jwglxt/*
 // @run-at       document-start
+// @downloadURL https://update.greasyfork.org/scripts/505971/SIT%E4%B8%8A%E5%BA%94%E5%A4%A7%E6%95%99%E5%8A%A1%20-%20%20%E7%94%9F%E6%88%90json%E6%96%87%E4%BB%B6.user.js
+// @updateURL https://update.greasyfork.org/scripts/505971/SIT%E4%B8%8A%E5%BA%94%E5%A4%A7%E6%95%99%E5%8A%A1%20-%20%20%E7%94%9F%E6%88%90json%E6%96%87%E4%BB%B6.meta.js
 // ==/UserScript==
 
 var ClassScheduleToJSONURL = "kbcx/xskbcx_cxXskbcxIndex.html"; // 学生课表查询页面
@@ -46,7 +48,7 @@ function ClassScheduleToJSON() {
         div.appendChild(btn);
 
         btn.onclick = function () {
-            let xnm = document.getElementById("xqm").value;
+            let xnm = document.getElementById("xnm").value;
             let xqm = document.getElementById("xqm").value;
             generateJson(xnm, xqm);
         }
