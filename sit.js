@@ -78,7 +78,7 @@ function ClassScheduleToJSON() {
             c = new Blob([n], { type: "octet/stream" }),
             d = window.URL.createObjectURL(c);
         a.href = d, a.download = t, a.click(), window.URL.revokeObjectURL(d);
-        alert("json文件已生成");
+        alert("json文件已生成，可将该生成的文件导入到小应生活中，即可查看课程表");
     }
 
     function generateJson(xnm, xqm) {
